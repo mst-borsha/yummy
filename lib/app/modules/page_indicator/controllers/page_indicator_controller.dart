@@ -1,23 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class PageIndicatorController extends GetxController {
-  //TODO: Implement PageIndicatorController
+  final PageController pageController = PageController();
+  final RxInt currentIndex = 0.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
+  void onPageChanged(int index) {
+    currentIndex.value = index;
   }
 
   @override
   void onClose() {
+    pageController.dispose();
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
+

@@ -34,6 +34,16 @@ class OnboardingOneView extends GetView<OnboardingOneController> {
               ),
             ),
             SizedBox(height: 35.h,),
+            /*ElevatedButton(onPressed: () {
+
+            }, child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: AppColors.orangeColor,
+                shape: BoxShape.circle,
+              ),
+            ))*/
 
 
           ],

@@ -48,7 +48,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PAGE_INDICATOR,
-      page: () => const PageIndicatorView(),
+      page: () =>  PageIndicatorView(),
       binding: PageIndicatorBinding(),
     ),
   ];
