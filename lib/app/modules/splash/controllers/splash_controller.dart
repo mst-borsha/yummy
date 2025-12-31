@@ -16,7 +16,7 @@ class SplashController extends GetxController {
     if (isLoggedIn) {
       Get.offAllNamed(Routes.HOME);
     } else {
-      //Get.offAllNamed(Routes.PAGE_INDICATOR);
+      Get.offAllNamed(Routes.PAGE_INDICATOR);
     }
   }
 }

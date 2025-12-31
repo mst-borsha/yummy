@@ -15,13 +15,9 @@ class SplashView extends GetView<SplashController> {
     return Scaffold(
      body:  Padding(
        padding:  EdgeInsets.symmetric(horizontal: 16.w,),
-       child: Column(
+       child:
+           Center(child: Image.asset(ImagePath.splash,height: 150.h,)),
 
-         children: [
-           Image.asset(ImagePath.splash,),
-           Text("Yummy",style: AppTextStyles.bold32,)
-         ],
-       ),
      ),
       
     );

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:yummy/app/data/app_color.dart';
 import 'package:yummy/app/data/app_text_style.dart';
 import 'package:yummy/app/data/image_path.dart';
+import 'package:yummy/app/routes/app_pages.dart';
 
 import '../controllers/onboarding_one_controller.dart';
 
@@ -15,7 +16,7 @@ class OnboardingOneView extends GetView<OnboardingOneController> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 8.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -29,23 +30,26 @@ class OnboardingOneView extends GetView<OnboardingOneController> {
             SizedBox(height: 16.h),
             Text(
               "We are always ready to deliver your items quickly and professionally ",
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: AppTextStyles.medium16.copyWith(
                 color: AppColors.greyColor,
               ),
             ),
-            SizedBox(height: 35.h,),
-            /*ElevatedButton(onPressed: () {
-
-            }, child: Container(
-              height: 50,
-              width: 50,
-              decoration: BoxDecoration(
-                color: AppColors.orangeColor,
-                shape: BoxShape.circle,
+            SizedBox(height: 80.h),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
+                onPressed: () {
+                  Get.toNamed(Routes.ONBOARDING_TWO);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.orangeColor,
+                  shape: CircleBorder(),
+                ),
+                child: Icon(Icons.arrow_forward_ios, size: 25),
               ),
-            ))*/
-
-
+            ),
           ],
         ),
       ),
