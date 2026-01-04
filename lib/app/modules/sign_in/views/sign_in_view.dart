@@ -20,7 +20,7 @@ class SignInView extends GetView<SignInController> {
           Stack(
             children: [
               Container(
-                height: 270.h,
+                height: 250.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: AppColors.skyColor.withAlpha(100),
