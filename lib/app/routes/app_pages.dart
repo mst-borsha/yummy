@@ -43,7 +43,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SIGN_IN,
-      page: () => const SignInView(),
+      page: () =>  SignInView(),
       binding: SignInBinding(),
     ),
     GetPage(

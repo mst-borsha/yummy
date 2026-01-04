@@ -1,23 +1,15 @@
 import 'package:get/get.dart';
 
 class SignInController extends GetxController {
-  //TODO: Implement SignInController
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final RxBool checked = false.obs;
+  final RxBool isVisible = true.obs;
+
+  void isChecked(bool v) {
+    checked.value = v;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void isVisibleOnPress() {
+    isVisible.value = !isVisible.value;
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
