@@ -6,7 +6,7 @@ ThemeData themeData(){
   return ThemeData(
     scaffoldBackgroundColor: AppColors.whiteColor,
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.whiteColor,
+      backgroundColor: AppColors.greyColor.withAlpha(50),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -19,7 +19,7 @@ ThemeData themeData(){
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: AppColors.greyColor,
+          color: AppColors.greyColor.withAlpha(50),
           width: 1,
         ),
       ),

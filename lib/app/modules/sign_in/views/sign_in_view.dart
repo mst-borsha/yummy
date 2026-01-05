@@ -125,18 +125,20 @@ class SignInView extends GetView<SignInController> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {Get.toNamed(Routes.HOME);},
                       child: Text(
                         "Sign In",
                         style: TextStyle(color: AppColors.blackColor, fontSize: 16),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
-                  Row(children: [
+                  SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                     Text("Do not have an account?",style: TextStyle(color: AppColors.greyColor,fontSize: 18),),
                     InkWell(
-                      //onTap: (){Get.toNamed}
+                      onTap: (){Get.toNamed(Routes.SIGN_UP);},
 
                         child: Text("Sign up",style: TextStyle(color: AppColors.skyColor,fontSize: 18),)),
                   ],)
