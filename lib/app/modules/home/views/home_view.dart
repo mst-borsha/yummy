@@ -117,7 +117,7 @@ class HomeView extends GetView<HomeController> {
                         height: 300,
                         width: double.infinity,
                         child: ListView.builder(
-                          itemCount: 60,
+                          itemCount: 30,
                           primary: false,
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
@@ -131,57 +131,112 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(height: 15),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                height: 500,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColors.greyColor,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Top voucher', style: AppTextStyles.bold24),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          color: AppColors.whiteColor,
+              Card(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  width: double.infinity,
+                  height: 300,
+                  decoration: BoxDecoration(
+                    color: AppColors.whiteColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Top voucher', style: AppTextStyles.bold24),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: AppColors.greyColor,
+                          ),
+                        ],
+                      ),
+                      Text(
+                        'We have 50 discount codes',
+                        style: AppTextStyles.medium16.copyWith(
+                          color: AppColors.greyColor,
                         ),
+                      ),
+                      SizedBox(height: 10),
+
+                      Expanded(
+                        child: GridView.builder(
+                          shrinkWrap: true,
+                          itemCount: 30,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                childAspectRatio: 2,
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
+                                crossAxisCount: 2,
+                              ),
+                          itemBuilder: (context, index) {
+                            return ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                ImagePath.gridViewVoucher,
+                                fit: BoxFit.cover,
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              Card(
+                child: Container(
+                  height: 400,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.whiteColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.h,
+                      vertical: 16.w,
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Near you", style: AppTextStyles.bold18),
+                            Icon(Icons.read_more_outlined, size: 30),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                
+                        Expanded(
+                          child: ListView.builder(
+                            itemCount: 10,
+                            primary: false,
+                            shrinkWrap: true,
+                            padding: EdgeInsets.zero,
+                            scrollDirection: Axis.vertical,
+                            itemBuilder: (context, index) {
+                              return buildCardRowListView(
+                                title: "Wonton egg noodle soup",
+                                subtitle: "Shrimp, ham, pork, chicken ",
+                                rating: "4.3",
+                                distance: "500m",
+                              );
+                
+                          },),
+                        )
+                
+                
+                
+                
+                
                       ],
                     ),
-                    Text(
-                      'We have 50 discount codes',
-                      style: AppTextStyles.medium16.copyWith(
-                        color: AppColors.whiteColor,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-
-                    // GridView.builder(
-                    //   //scrollDirection: Axis.vertical,
-                    //     shrinkWrap: true,
-                    //     itemCount: 100,
-                    //     primary: false,
-                    //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    //       childAspectRatio: 1,
-                    //         crossAxisSpacing: 10,
-                    //         mainAxisSpacing: 10,
-                    //         crossAxisCount: 2), itemBuilder: (context, index) {
-                    //           return  ClipRRect(
-                    //             borderRadius: BorderRadius.circular(12),
-                    //             child: Image.asset(
-                    //               ImagePath.gridViewVoucher,
-                    //               fit: BoxFit.cover,
-                    //             ),
-                    //           );
-                    //         },)
-
-
-
-                  ],
+                  ),
                 ),
               ),
             ],
@@ -189,6 +244,107 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
     );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Padding buildCardRowListView({
+    required String title,
+    required String subtitle,
+    required String rating,
+    required String distance,
+  }) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 10.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: 80,
+            width: 104,
+            decoration: BoxDecoration(
+              color: AppColors.skyColor,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Center(child: Image.asset(ImagePath.homePic3, height: 120)),
+          ),
+          SizedBox(width: 20),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: AppTextStyles.medium14,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+
+                ),
+                Text(
+                  subtitle,
+                  style: AppTextStyles.medium12,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
+                SizedBox(height: 10),
+                Row(
+                  children: [
+                    Image.asset(ImagePath.homeStar, height: 25),
+                    SizedBox(width: 5),
+                    Text(rating, style: AppTextStyles.medium12),
+                    SizedBox(width: 5),
+                    Text("|", style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor)),
+                    SizedBox(width: 5),
+                    Icon(Icons.location_on_outlined, size: 20,),
+                    Text(
+                      distance,
+                      style: AppTextStyles.medium12.copyWith(
+                        color: AppColors.blackColor,
+
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+
   }
 
   Container buildListViewContainer() {
