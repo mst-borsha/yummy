@@ -6,7 +6,7 @@ ThemeData themeData(){
   return ThemeData(
     scaffoldBackgroundColor: AppColors.whiteColor,
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.greyColor.withAlpha(50),
+      backgroundColor: AppColors.whiteColor,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

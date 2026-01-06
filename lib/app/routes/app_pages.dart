@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
 
+import '../modules/address/bindings/address_binding.dart';
+import '../modules/address/views/address_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/homepage_filter/bindings/homepage_filter_binding.dart';
+import '../modules/homepage_filter/views/homepage_filter_view.dart';
 import '../modules/onboarding_one/bindings/onboarding_one_binding.dart';
 import '../modules/onboarding_one/views/onboarding_one_view.dart';
 import '../modules/onboarding_two/bindings/onboarding_two_binding.dart';
@@ -57,6 +61,16 @@ class AppPages {
       name: _Paths.SIGN_UP,
       page: () => const SignUpView(),
       binding: SignUpBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOMEPAGE_FILTER,
+      page: () => const HomepageFilterView(),
+      binding: HomepageFilterBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADDRESS,
+      page: () => const AddressView(),
+      binding: AddressBinding(),
     ),
   ];
 }

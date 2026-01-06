@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:yummy/app/data/app_color.dart';
 import 'package:yummy/app/data/app_text_style.dart';
 import 'package:yummy/app/data/image_path.dart';
+import 'package:yummy/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -49,19 +50,30 @@ class HomeView extends GetView<HomeController> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search_sharp),
-                  filled: true,
-                  fillColor: AppColors.greyColor.withAlpha(40),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(70),
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.HOMEPAGE_FILTER);
+                },
+                child: Container(
+                  height: 45.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.greyColor.withAlpha(50),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide.none,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 15),
+                      child: Icon(
+                        Icons.search_sharp,
+                        color: AppColors.greyColor,
+                      ),
+                    ),
                   ),
                 ),
               ),
+
               SizedBox(height: 10.h),
               Image.asset(ImagePath.homepage),
               // categories List View
@@ -211,7 +223,7 @@ class HomeView extends GetView<HomeController> {
                           ],
                         ),
                         SizedBox(height: 20),
-                
+
                         Expanded(
                           child: ListView.builder(
                             itemCount: 10,
@@ -226,14 +238,9 @@ class HomeView extends GetView<HomeController> {
                                 rating: "4.3",
                                 distance: "500m",
                               );
-                
-                          },),
-                        )
-                
-                
-                
-                
-                
+                            },
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -245,34 +252,6 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -311,7 +290,6 @@ class HomeView extends GetView<HomeController> {
                   style: AppTextStyles.medium14,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
-
                 ),
                 Text(
                   subtitle,
@@ -326,14 +304,18 @@ class HomeView extends GetView<HomeController> {
                     SizedBox(width: 5),
                     Text(rating, style: AppTextStyles.medium12),
                     SizedBox(width: 5),
-                    Text("|", style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor)),
+                    Text(
+                      "|",
+                      style: AppTextStyles.medium12.copyWith(
+                        color: AppColors.greyColor,
+                      ),
+                    ),
                     SizedBox(width: 5),
-                    Icon(Icons.location_on_outlined, size: 20,),
+                    Icon(Icons.location_on_outlined, size: 20),
                     Text(
                       distance,
                       style: AppTextStyles.medium12.copyWith(
                         color: AppColors.blackColor,
-
                       ),
                     ),
                   ],
@@ -344,8 +326,9 @@ class HomeView extends GetView<HomeController> {
         ],
       ),
     );
-
   }
+
+
 
   Container buildListViewContainer() {
     return Container(

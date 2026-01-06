@@ -10,6 +10,8 @@ abstract class Routes {
   static const SIGN_IN = _Paths.SIGN_IN;
   static const PAGE_INDICATOR = _Paths.PAGE_INDICATOR;
   static const SIGN_UP = _Paths.SIGN_UP;
+  static const HOMEPAGE_FILTER = _Paths.HOMEPAGE_FILTER;
+  static const ADDRESS = _Paths.ADDRESS;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const SIGN_IN = '/sign-in';
   static const PAGE_INDICATOR = '/page-indicator';
   static const SIGN_UP = '/sign-up';
+  static const HOMEPAGE_FILTER = '/homepage-filter';
+  static const ADDRESS = '/address';
 }
