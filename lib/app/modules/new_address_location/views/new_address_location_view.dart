@@ -26,8 +26,13 @@ class NewAddressLocationView extends GetView<NewAddressLocationController> {
             ),
             ClipRRect(child: Image.asset(ImagePath.locationMap)),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 16.h,vertical: 10.w),
-              child: Text("Suggest",style: AppTextStyles.medium20.copyWith(color: AppColors.greyColor),),
+              padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 10.w),
+              child: Text(
+                "Suggest",
+                style: AppTextStyles.medium20.copyWith(
+                  color: AppColors.greyColor,
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.location_on_outlined),
@@ -44,7 +49,7 @@ class NewAddressLocationView extends GetView<NewAddressLocationController> {
               title: Text("Company Vinachem"),
               subtitle: Text('6 Pham Ngu Lao, Phan Chu Trinh, Viet Nam'),
             ),
-        
+
           ],
         ),
       ),

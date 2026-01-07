@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/address/bindings/address_binding.dart';
 import '../modules/address/views/address_view.dart';
+import '../modules/favorite_restaurant/bindings/favorite_restaurant_binding.dart';
+import '../modules/favorite_restaurant/views/favorite_restaurant_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/homepage_filter/bindings/homepage_filter_binding.dart';
@@ -26,7 +28,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ADDRESS;
+  static const INITIAL = Routes.FAVORITE_RESTAURANT;
 
   static final routes = [
     GetPage(
@@ -78,6 +80,11 @@ class AppPages {
       name: _Paths.NEW_ADDRESS_LOCATION,
       page: () => const NewAddressLocationView(),
       binding: NewAddressLocationBinding(),
+    ),
+    GetPage(
+      name: _Paths.FAVORITE_RESTAURANT,
+      page: () => const FavoriteRestaurantView(),
+      binding: FavoriteRestaurantBinding(),
     ),
   ];
 }
