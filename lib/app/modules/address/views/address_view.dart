@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:yummy/app/data/app_text_style.dart';
+import 'package:yummy/app/routes/app_pages.dart';
 
 import '../../../data/app_color.dart';
 import '../controllers/address_controller.dart';
@@ -115,7 +116,9 @@ class AddressView extends GetView<AddressController> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(Routes.NEW_ADDRESS_LOCATION);
+                },
                 child: Text("New address"),
               ),
             ),

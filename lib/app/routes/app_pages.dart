@@ -6,6 +6,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/homepage_filter/bindings/homepage_filter_binding.dart';
 import '../modules/homepage_filter/views/homepage_filter_view.dart';
+import '../modules/new_address_location/bindings/new_address_location_binding.dart';
+import '../modules/new_address_location/views/new_address_location_view.dart';
 import '../modules/onboarding_one/bindings/onboarding_one_binding.dart';
 import '../modules/onboarding_one/views/onboarding_one_view.dart';
 import '../modules/onboarding_two/bindings/onboarding_two_binding.dart';
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.ADDRESS,
       page: () => const AddressView(),
       binding: AddressBinding(),
+    ),
+    GetPage(
+      name: _Paths.NEW_ADDRESS_LOCATION,
+      page: () => const NewAddressLocationView(),
+      binding: NewAddressLocationBinding(),
     ),
   ];
 }

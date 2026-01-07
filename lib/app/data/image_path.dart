@@ -11,5 +11,6 @@ class  ImagePath{
   static const String homeStar = '$baseUrl/Star.png';
   static const String gridViewVoucher = '$baseUrl/gridViewVoucher.png';
   static const String homePic3 = '$baseUrl/home_pic3.png';
+  static const String locationMap = '$baseUrl/location.png';
 
 }
