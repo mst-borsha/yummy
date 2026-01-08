@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:yummy/app/data/app_color.dart';
 import 'package:yummy/app/data/app_text_style.dart';
 import 'package:yummy/app/data/image_path.dart';
+import 'package:yummy/app/routes/app_pages.dart';
 
 import '../controllers/check_order_confirm_controller.dart';
 
@@ -136,7 +137,9 @@ class CheckOrderConfirmView extends GetView<CheckOrderConfirmController> {
             SizedBox(height: 40,),
             SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(onPressed: (){}, child: Text("Order")))
+                child: ElevatedButton(onPressed: (){
+                  Get.toNamed(Routes.MENU);
+                }, child: Text("Order")))
           ],
         ),
       ),
