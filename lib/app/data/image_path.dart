@@ -13,5 +13,6 @@ class  ImagePath{
   static const String homePic3 = '$baseUrl/home_pic3.png';
   static const String locationMap = '$baseUrl/location.png';
   static const String favoritePic = '$baseUrl/favoritePic.png';
+  static const String informationPic = '$baseUrl/information.png';
 
 }

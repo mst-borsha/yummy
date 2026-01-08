@@ -4,10 +4,14 @@ import '../modules/address/bindings/address_binding.dart';
 import '../modules/address/views/address_view.dart';
 import '../modules/favorite_restaurant/bindings/favorite_restaurant_binding.dart';
 import '../modules/favorite_restaurant/views/favorite_restaurant_view.dart';
+import '../modules/food_details/bindings/food_details_binding.dart';
+import '../modules/food_details/views/food_details_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/homepage_filter/bindings/homepage_filter_binding.dart';
 import '../modules/homepage_filter/views/homepage_filter_view.dart';
+import '../modules/information/bindings/information_binding.dart';
+import '../modules/information/views/information_view.dart';
 import '../modules/new_address_location/bindings/new_address_location_binding.dart';
 import '../modules/new_address_location/views/new_address_location_view.dart';
 import '../modules/onboarding_one/bindings/onboarding_one_binding.dart';
@@ -16,6 +20,8 @@ import '../modules/onboarding_two/bindings/onboarding_two_binding.dart';
 import '../modules/onboarding_two/views/onboarding_two_view.dart';
 import '../modules/page_indicator/bindings/page_indicator_binding.dart';
 import '../modules/page_indicator/views/page_indicator_view.dart';
+import '../modules/restaurant/bindings/restaurant_binding.dart';
+import '../modules/restaurant/views/restaurant_view.dart';
 import '../modules/sign_in/bindings/sign_in_binding.dart';
 import '../modules/sign_in/views/sign_in_view.dart';
 import '../modules/sign_up/bindings/sign_up_binding.dart';
@@ -28,7 +34,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.FAVORITE_RESTAURANT;
+  static const INITIAL = Routes.FOOD_DETAILS;
 
   static final routes = [
     GetPage(
@@ -85,6 +91,21 @@ class AppPages {
       name: _Paths.FAVORITE_RESTAURANT,
       page: () => const FavoriteRestaurantView(),
       binding: FavoriteRestaurantBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESTAURANT,
+      page: () => const RestaurantView(),
+      binding: RestaurantBinding(),
+    ),
+    GetPage(
+      name: _Paths.INFORMATION,
+      page: () => const InformationView(),
+      binding: InformationBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_DETAILS,
+      page: () => const FoodDetailsView(),
+      binding: FoodDetailsBinding(),
     ),
   ];
 }
