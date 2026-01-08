@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/address/bindings/address_binding.dart';
 import '../modules/address/views/address_view.dart';
+import '../modules/check_order_confirm/bindings/check_order_confirm_binding.dart';
+import '../modules/check_order_confirm/views/check_order_confirm_view.dart';
 import '../modules/favorite_restaurant/bindings/favorite_restaurant_binding.dart';
 import '../modules/favorite_restaurant/views/favorite_restaurant_view.dart';
 import '../modules/food_details/bindings/food_details_binding.dart';
@@ -34,7 +36,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.FOOD_DETAILS;
+  static const INITIAL = Routes.CHECK_ORDER_CONFIRM;
 
   static final routes = [
     GetPage(
@@ -106,6 +108,11 @@ class AppPages {
       name: _Paths.FOOD_DETAILS,
       page: () => const FoodDetailsView(),
       binding: FoodDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHECK_ORDER_CONFIRM,
+      page: () => const CheckOrderConfirmView(),
+      binding: CheckOrderConfirmBinding(),
     ),
   ];
 }

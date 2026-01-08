@@ -10,6 +10,7 @@ static  const Color redColor = Color(0xffFF624D);
 static  const Color blackColor = Color(0xff313337);
 static  const Color blueColor = Color(0xff5286df);
 static  const Color violetColor = Color(0xffdce9ff);
+//static  const Color violetColor = Color(0xffd2c2fe);
 
 
 }
